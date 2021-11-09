@@ -10,6 +10,7 @@ class Score(Turtle):
         self.goto(0, 280)
         self.penup()
         self.score = 0
+        self.high_score = 0
         self.refresh_score()
 
     def refresh_score(self):

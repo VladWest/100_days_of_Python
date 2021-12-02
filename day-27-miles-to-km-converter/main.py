@@ -1,7 +1,7 @@
 from tkinter import *
 
 window = Tk()
-window.title("My first GUI with Tkinter")
+window.title("Miles to kilometer converter")
 window.minsize(width=350, height=200)
 window.config(padx=45, pady=50)
 

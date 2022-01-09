@@ -5,8 +5,8 @@ import random
 import pandas
 
 # Credentials for mail box
-my_email = "stepafarm1101@gmail.com"
-password = "A232D83M_in905!"
+my_email = ""
+password = ""
 
 # 1. Update the birthdays.csv, pick up data from csv file
 

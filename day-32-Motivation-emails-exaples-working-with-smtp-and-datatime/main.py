@@ -2,8 +2,8 @@ import smtplib
 import datetime as dt
 import random
 
-my_email = "stepafarm1101@gmail.com"
-password = "A232D83M_in905!"
+my_email = ""
+password = ""
 
 with open("quotes.txt", mode="r") as data:
     content = data.read()

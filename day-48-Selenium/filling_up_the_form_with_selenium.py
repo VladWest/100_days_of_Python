@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 chrome_driver_path = "chromedriver.exe"
 driver = webdriver.Chrome(executable_path=chrome_driver_path)
 
-driver.get("http://orteil.dashnet.org/experiments/cookie/")
+driver.get("http://secure-retreat-92358.herokuapp.com/")
 
 first_name = driver.find_element(by=By.NAME, value="fName")
 first_name.send_keys("Vlad")

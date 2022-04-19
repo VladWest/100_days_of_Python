@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import time
 
 FORM_URL = "https://forms.gle/8zcry6Hp44zrVZGo7"
@@ -21,7 +22,6 @@ all_link_elements = soup.select(".list-card-top a")
 all_links = []
 for link in all_link_elements:
     href = link["href"]
-    print(href)
     if "http" not in href:
         all_links.append(f"https://www.zillow.com{href}")
     else:
@@ -30,22 +30,23 @@ for link in all_link_elements:
 all_address_elements = soup.select(".list-card-info address")
 all_addresses = [address.get_text().split(" | ")[-1] for address in all_address_elements]
 
-all_price_elements = soup.select(".list-card-details li")
-all_prices = [price.get_text().split("+")[0] for price in all_price_elements if "$" in price.text]
+# all_price_elements = soup.select(".list-card-details li")
+# all_prices = [price.get_text().split("+")[0] for price in all_price_elements if "$" in price.text]
+all_price_elements = soup.select(".list-card-price")
+all_prices = [price.getText() for price in all_price_elements]
+
 
 chrome_driver_path = "chromedriver.exe"
 driver = webdriver.Chrome(executable_path=chrome_driver_path)
+
 
 for n in range(len(all_links)):
     driver.get(FORM_URL)
 
     time.sleep(3)
-    address = driver.find_element_by_xpath(
-        '/html/body/div/div[2]/form/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
-    price = driver.find_element_by_xpath(
-        '/html/body/div/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[1]/input')
-    link = driver.find_element_by_xpath(
-        '/html/body/div/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[1]/input')
+    address = driver.find_element(By.XPATH, '/html/body/div/div[2]/form/div[2]/div/div[2]/div[1]/div/div/div[2]/div/div[1]/div/div[1]/input')
+    price = driver.find_element(By.XPATH, '/html/body/div/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div[1]/input')
+    link = driver.find_element(By.XPATH, '/html/body/div/div[2]/form/div[2]/div/div[2]/div[3]/div/div/div[2]/div/div[1]/div/div[1]/input')
 
     submit_button = driver.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[3]/div[1]/div/div')
 
@@ -56,6 +57,11 @@ for n in range(len(all_links)):
     link.send_keys(all_links[n])
     time.sleep(2)
     submit_button.click()
+    # print(n)
+    # print(len(all_prices))
+    # print(all_addresses[n])
+    # print(all_prices[n])
+    # print(all_links[n])
 
 
 

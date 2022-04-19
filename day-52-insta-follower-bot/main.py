@@ -9,8 +9,9 @@ from selenium.webdriver.support import expected_conditions as EC
 INSTA_EMAIL = os.environ.get("INSTA_EMAIL")
 INSTA_USERNAME = os.environ.get("INSTA_USERNAME")
 INSTA_PASS = os.environ.get("INSTA_PASS")
-
+# Variable below used for check hom many times list of followers should be scrolled
 NUMBER_OF_SCROLL = 10
+# name of account where we want to follow followers
 SIMIlAR_ACCOUNT = "python.hub"
 
 chrome_driver_path = "chromedriver.exe"
@@ -52,12 +53,14 @@ class InstaFollower:
         time.sleep(3)
         pop_up_window = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH,
                                                                                         "//div[@Class='isgrP']")))
+        # Scroll the followers list
         for _ in range(number_of_scrolls):
             self.driver.execute_script('arguments[0].scrollTop = arguments[0].scrollTop + arguments[0].offsetHeight',
                                        pop_up_window)
             time.sleep(3)
 
     def follow(self):
+        # Follow the account
         all_buttons = self.driver.find_elements_by_css_selector("li button")
         for button in all_buttons:
             if button.text != "Follow":

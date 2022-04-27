@@ -7,6 +7,7 @@ def logging_decorator(fn):
     return wrapper
 
 
+# Function which need to be decorated
 @logging_decorator
 def mul(a1, a2, a3):
     return a1 * a2 * a3

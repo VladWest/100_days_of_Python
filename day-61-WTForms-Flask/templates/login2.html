@@ -1,0 +1,15 @@
+{% extends 'bootstrap/base.html' %}
+<!--element and add a line to inherit the wtf support from bootstrap-->
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+<div class="container">
+		<h1>Login</h1>
+<!--    Generate all form-->
+        {{ wtf.quick_form(form) }}
+    </div>
+{% endblock %}

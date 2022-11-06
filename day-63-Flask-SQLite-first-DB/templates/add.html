@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book</title>
+</head>
+<body>
+<br>
+<br>
+    <form action="/add" method="POST">
+        <label for="book_name">Book Title</label>
+        <input name="title" id="book_name", placeholder="Put book title here.." type="text" required>
+        <br>
+        <br>
+        <label for="book_author">Book Author</label>
+        <input name="author" id="book_author", placeholder="Author name here.." type="text" required>
+        <br>
+        <br>
+        <label for="book_rating">Rating</label>
+        <input name="rating" id="book_rating" type="text" placeholder="Few words about book..." required>
+        <br>
+        <br>
+        <button type="submit">Add Book</button>
+    </form>
+</body>
+</html>

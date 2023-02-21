@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c012bbdc-7d11-4aaa-b6d9-ee720693a016" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-67-REST_API/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-67-REST_API/.idea/day-67-REST_API.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-67-REST_API/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-67-REST_API/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-67-REST_API/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-67-REST_API/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-67-REST_API/instance/cafes.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-67-REST_API/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day-67-REST_API/templates/index.html" beforeDir="false" />
-    </list>
+    <list default="true" id="c012bbdc-7d11-4aaa-b6d9-ee720693a016" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
